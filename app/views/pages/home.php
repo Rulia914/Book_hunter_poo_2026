@@ -10,7 +10,7 @@
             <span
               class="bg-white text-gray-800 px-2 py-1 rounded-md text-sm font-semibold absolute top-2 left-2"
             >
-              Drame
+            <?php echo $book['category_id'];?>
             </span>
             <img
               class="w-full h-48 object-cover"
@@ -40,9 +40,7 @@
               </div>
 
               <p class="text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-                risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-                nec, ultricies sed, dolor.
+              <?php echo $book['resume'];?>
               </p>
 
               <a
