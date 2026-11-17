@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use \PDO;
-use \App\Models\BooksModel;
+use \App\Models\BooksManager;
 
 abstract class PagesController
 {
@@ -11,8 +11,7 @@ abstract class PagesController
     //void : pcq la fonction ne retourne rien
     public static function homeAction(PDO $connexion): void
     {
-        include_once '../app/models/booksModel.php';
-        $books = BooksModel\findAll($connexion, 3);
+        $books = BooksManager::findAll($connexion, 3);
         global $title, $content;
         $title = "Latest Books & Authors";
 
