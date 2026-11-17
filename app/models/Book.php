@@ -3,7 +3,7 @@ namespace App\Models;
 
 class Book {
     //champs natifs
-    public $id, $title, $publicated_at, $resume, $cover, $isbn, $author_id, $category_id, $created_at, $notation;
+    private $id, $title, $publicated_at, $resume, $cover, $isbn, $author_id, $category_id, $created_at, $notation;
     //champs issus de liaisons
     private $author, $category, $tags;
 
