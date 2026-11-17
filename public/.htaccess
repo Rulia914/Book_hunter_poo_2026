@@ -10,6 +10,10 @@ RewriteRule ^ - [L]
 # REGLES DE REECRITURE
 # --------------------------------------------
 
+# ROUTE AUTHORS.INDEX
+# PATTERN: /authors
+# URL: ?authors=index
+RewriteRule ^authors$ ?authors=index [L]
 
 # --------------------------------------------
 # FALLBACK
