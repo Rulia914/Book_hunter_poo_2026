@@ -2,10 +2,10 @@
 namespace App\Models;
 
 class Book {
-    public $id, $title, $publicated_at, $resume, $cover, $isbn, $author_id, $category_id, $created_at;
-
-    private $author;
-    private $category;
+    //champs natifs
+    public $id, $title, $publicated_at, $resume, $cover, $isbn, $author_id, $category_id, $created_at, $notation;
+    //champs issus de liaisons
+    private $author, $category, $tags;
 
     public function __get(string $property): mixed {
         $setterName = 'set' . ucfirst($property); //construction des setters
@@ -19,5 +19,8 @@ class Book {
 
     private function setCategory(){
         $this->category = CategoriesManager::findOneById($this->category_id);
+    }
+    private function setTags(){
+        $this->tags = TagsManager::findAllByBookId($this->id);
     }
 }

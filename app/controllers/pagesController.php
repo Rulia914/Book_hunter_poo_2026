@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use \App\Models\BooksManager;
+use \App\Models\TagsManager;
 
 abstract class PagesController
 {
@@ -12,7 +13,8 @@ abstract class PagesController
     public static function homeAction(): void
     {
         $books = BooksManager::findAll(3);
-        global $title, $content;
+        global $title, $content, $tags;
+        $tags = TagsManager::findAll();
         $title = "Latest Books & Authors";
 
         ob_start();

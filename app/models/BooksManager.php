@@ -9,10 +9,13 @@ abstract class BooksManager
 {
     public static function findAll(int $limit = 9): array
     {
-        $sql = 'SELECT * 
-            FROM books
-            ORDER BY created_at DESC
-            LIMIT :limit;';
+        $sql = "SELECT b.*, ROUND(AVG(us.note), 2) AS notation
+                FROM books b
+                LEFT JOIN users_notations us ON us.book_id = b.id
+                GROUP BY b.id
+                ORDER BY notation DESC
+                LIMIT :limit;";
+
         //$rs = $connexion->prepare($sql);
         $rs = DB::getConnexion()->prepare($sql);
         $rs->bindValue(':limit', $limit, PDO::PARAM_INT);
