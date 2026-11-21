@@ -22,4 +22,18 @@ abstract class BooksManager
         $rs->execute();
         return $rs->fetchAll(PDO::FETCH_CLASS, Book::class); //pour hydratation
     }
+
+    public static function findAllByAuthorId(int $id): array
+    {
+        $sql = "SELECT b.*
+                FROM books b
+                WHERE author_id=:id
+                ORDER BY created_at DESC;";
+
+        //$rs = $connexion->prepare($sql);
+        $rs = DB::getConnexion()->prepare($sql);
+        $rs->bindValue(':id', $id, PDO::PARAM_INT);
+        $rs->execute();
+        return $rs->fetchAll(PDO::FETCH_CLASS, Book::class); //pour hydratation
+    }
 }

@@ -19,7 +19,7 @@
             />
             <div class="p-4">
               <?php 
-              $tags = $book->tags;
+              $bookTags = $book->tags;
               include '../app/views/tags/_index.php';
               ?>
               <h3 class="text-xl font-bold"><?php echo $book->title;?></h3>

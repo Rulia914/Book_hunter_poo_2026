@@ -11,7 +11,7 @@
               alt="<?php echo $author->firstname;?> <?php echo $author->lastname;?>"
             />
             <div class="p-4">
-              <h3 class="text-xl font-bold mb-2"><?php echo $author->firstname;?> <?php echo $author->lastname;?></h3>
+              <h3 class="text-xl font-bold mb-2"><?php echo $author->firstname;?> <?php echo $author->lastname;?> - Nombre de books: <?php echo count($author->books);?></h3>
               <div class="flex items-center mb-2">
                 <span class="text-yellow-500 mr-1"
                   ><i class="fas fa-star"></i
