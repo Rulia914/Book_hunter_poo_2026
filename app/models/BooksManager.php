@@ -32,4 +32,17 @@ abstract class BooksManager
         $rs->execute();
         return $rs->fetchObject(Book::class);
     }
+    public static function findAllById(int $id): Book
+    {
+        $sql = "SELECT b.*, ROUND(AVG(us.note), 2) AS notation
+        FROM books b
+        LEFT JOIN users_notations us ON us.book_id = b.id
+        WHERE b.id=:id;";
+
+        //$rs = $connexion->prepare($sql);
+        $rs = DB::getConnexion()->prepare($sql);
+        $rs->bindValue(':id', $id, PDO::PARAM_INT);
+        $rs->execute();
+        return $rs->fetchObject(Book::class); //pour hydratation
+    }
 }

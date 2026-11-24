@@ -12,6 +12,7 @@
                 src="<?php echo $author->picture; ?>"
                 alt="<?php echo $author->firstname; ?> <?php echo $author->lastname; ?>" />
             <div class="p-4">
+<<<<<<< HEAD
                 <h3 class="text-xl font-bold mb-2">
                     <?php echo $author->firstname; ?>
                     <?php echo $author->lastname; ?>
@@ -28,6 +29,24 @@
                     class="inline-block mt-4 bg-red-500 hover:bg-red-800 rounded-full px-4 py-2 text-white">
                     More details
                 </a>
+=======
+              <h3 class="text-xl font-bold mb-2"><?php echo $author->firstname;?> <?php echo $author->lastname;?> - Nombre de books: <?php echo count($author->books);?></h3>
+              <div class="flex items-center mb-2">
+                <span class="text-yellow-500 mr-1"
+                  ><i class="fas fa-star"></i
+                ></span>
+                <span>8.9</span>
+              </div>
+              <p class="text-gray-400">
+              <?php echo \Core\Helpers::truncate($author->biography);?>
+              </p>
+              <a
+                href="authors/<?php $author->id ?>/<?php echo \Core\Helpers::slugify($author->firstname . ' ' .$author->lastname);?>"
+                class="inline-block mt-4 bg-red-500 hover:bg-red-800 rounded-full px-4 py-2 text-white"
+              >
+                More details
+              </a>
+>>>>>>> 796ceec0787128d861bb6a71ed621751ce59240e
             </div>
         </article>
     <?php endforeach; ?>
