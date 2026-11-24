@@ -1,9 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 796ceec0787128d861bb6a71ed621751ce59240e
 /** @var \App\Models\Book $book */ ?>
 <div class="bg-gray-700 rounded-lg shadow-lg p-4">
     <div class="flex flex-wrap">
@@ -50,8 +47,4 @@
             <?php echo $book->resume; ?>
         </p>
     </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> 796ceec0787128d861bb6a71ed621751ce59240e
