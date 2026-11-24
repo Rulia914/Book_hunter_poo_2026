@@ -13,3 +13,4 @@ abstract class Model{
     }
 
 }
+//Méthode magique => se déclenche grâce à un trigger. il se lance quand on tente d'acceder à une propriété qui n'existe pas ou une propriété private
