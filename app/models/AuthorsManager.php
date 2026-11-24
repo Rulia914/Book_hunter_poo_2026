@@ -29,4 +29,5 @@ abstract class AuthorsManager
         $rs->execute();
         return $rs->fetchAll(PDO::FETCH_CLASS, Author::class);
     }
+   
 }

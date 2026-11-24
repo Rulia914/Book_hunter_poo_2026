@@ -34,4 +34,5 @@ class Book
     {
         $this->tags = TagsManager::findAllByBookId($this->id);
     }
+    
 }
