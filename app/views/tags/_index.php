@@ -1,6 +1,5 @@
 <?php
 
-
 /** @var array $tags  */
 ?>
 <div class="pb-4">

@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
-class Category {
+class Category
+{
+
     public $id, $name, $created_at;
 }

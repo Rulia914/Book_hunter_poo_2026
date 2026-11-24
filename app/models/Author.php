@@ -1,11 +1,9 @@
 <?php
+
 namespace App\Models;
 
-class Author extends \Core\Model {
-    protected $id, $firstname, $lastname, $biography, $picture, $created_at;
-    protected $books;
+class Author
+{
 
-    protected function setBooks(){
-        $this->books = BooksManager::findAllByAuthorId($this->id);
-    }
+    public $id, $firstname, $lastname, $biography, $picture, $created_at;
 }

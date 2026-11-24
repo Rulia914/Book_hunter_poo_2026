@@ -15,25 +15,21 @@ abstract class BooksManager
                 GROUP BY b.id
                 ORDER BY notation DESC
                 LIMIT :limit;";
-
-        //$rs = $connexion->prepare($sql);
         $rs = DB::getConnexion()->prepare($sql);
         $rs->bindValue(':limit', $limit, PDO::PARAM_INT);
         $rs->execute();
-        return $rs->fetchAll(PDO::FETCH_CLASS, Book::class); //pour hydratation
+        return $rs->fetchAll(PDO::FETCH_CLASS, Book::class);
     }
 
-    public static function findAllByAuthorId(int $id): array
+    public static function findOneById(int $id): Book
     {
-        $sql = "SELECT b.*
+        $sql = "SELECT b.*, ROUND(AVG(us.note), 2) AS notation
                 FROM books b
-                WHERE author_id=:id
-                ORDER BY created_at DESC;";
-
-        //$rs = $connexion->prepare($sql);
+                LEFT JOIN users_notations us ON us.book_id = b.id
+                WHERE b.id = :id;";
         $rs = DB::getConnexion()->prepare($sql);
         $rs->bindValue(':id', $id, PDO::PARAM_INT);
         $rs->execute();
-        return $rs->fetchAll(PDO::FETCH_CLASS, Book::class); //pour hydratation
+        return $rs->fetchObject(Book::class);
     }
 }

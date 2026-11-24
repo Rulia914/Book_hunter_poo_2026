@@ -1,6 +1,5 @@
 <?php
 
-
 /** @var array $books  */
 ?>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -17,12 +16,10 @@
                 alt="<?php echo $book->title; ?>" />
             <div class="p-4">
 
-
                 <?php
                 $tags = $book->tags;
                 include '../app/views/tags/_index.php';
                 ?>
-
 
                 <h3 class="text-xl font-bold">
                     <?php echo $book->title; ?>
@@ -40,14 +37,12 @@
                     </span>
                 </div>
 
-
                 <p class="text-gray-400">
                     <?php echo $book->resume; ?>
                 </p>
 
-
                 <a
-                    href="book.html"
+                    href="books/<?php echo $book->id; ?>/<?php echo \Core\Helpers::slugify($book->title); ?>"
                     class="inline-block mt-4 bg-red-500 hover:bg-red-800 rounded-full px-4 py-2 text-white">
                     More details
                 </a>

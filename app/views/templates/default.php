@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <?php include '../app/views/templates/partials/_head.php'?>
-  <body class="bg-gray-900 text-white font-sans leading-normal tracking-normal">
-    <!-- Header -->
-    <?php include '../app/views/templates/partials/_nav.php'?>
 
-    <?php include '../app/views/templates/partials/_main.php'?>
+<head>
+    <?php include '../app/views/templates/partials/_head.php'; ?>
+</head>
 
-    <!-- Footer -->
-    <?php include '../app/views/templates/partials/_footer.php'?>
-  </body>
+<body class="bg-gray-900 text-white font-sans leading-normal tracking-normal">
+    <?php include '../app/views/templates/partials/_nav.php'; ?>
+
+    <?php include '../app/views/templates/partials/_main.php'; ?>
+
+    <?php include '../app/views/templates/partials/_footer.php'; ?>
+</body>
+
 </html>
