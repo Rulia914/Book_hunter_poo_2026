@@ -1,12 +1,10 @@
 <?php
-
-/** @var array $tags  */
+/**@var array $tags */
 ?>
-<div class="pb-4">
-    <?php foreach ($tags as $tag): ?>
-        <span
-            class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold mr-2">
-            <?php echo $tag->name; ?>
-        </span>
-    <?php endforeach; ?>
-</div>
+
+<h2 class="font-bold text-lg mb-4">Tags</h2>
+        <div class="tag-cloud">
+            <?php foreach ($tags as $tag):?>
+            <a class="text-gray-300 hover:text-white text-sm" href="#"><?php echo $tag->name;?></a>
+<?php endforeach;?>
+        </div>

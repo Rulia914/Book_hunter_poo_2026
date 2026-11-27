@@ -18,4 +18,13 @@ abstract class TagsManager
         $rs->execute();
         return $rs->fetchAll(PDO::FETCH_CLASS, Tag::class);
     }
+    public static function findAll(): array
+    {
+        $sql='SELECT * 
+            FROM tags
+            ORDER BY name ASC;';
+            $rs = DB::getConnexion()->prepare($sql);
+            $rs->execute();
+            return $rs->fetchAll(PDO::FETCH_CLASS, Tag::class);
+    }
 }

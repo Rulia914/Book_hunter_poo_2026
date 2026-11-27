@@ -3,11 +3,11 @@
 
 namespace App\Controllers;
 
-
+use \Core\Controller;
 use \App\Models\AuthorsManager;
 
 
-abstract class AuthorsController
+abstract class AuthorsController extends Controller
 {
 
 

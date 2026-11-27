@@ -3,8 +3,9 @@
 namespace App\Controllers;
 
 use \App\Models\BooksManager;
+use Core\Controller;
 
-abstract class BooksController
+abstract class BooksController extends Controller
 {
 
     public static function indexAction(): void

@@ -2,23 +2,15 @@
 
 namespace App\Models;
 
-class Author
+use Core\Model;
+
+class Author extends Model
 {
 
-    private $id, $firstname, $lastname, $biography, $picture, $created_at;
+    protected $id, $firstname, $lastname, $biography, $picture, $created_at;
 
-    private $books;
+    protected $books;
 
-    public function __get(string $property): mixed
-    {
-        $setterName = 'set' . ucfirst($property);
-        if (method_exists($this, $setterName)) $this->$setterName();
-        return $this->$property;
-    }
-    private function setBooks(): void
-    {
-        $this->books = BooksManager::findAllByAuthorId($this->id);
-    }
 }
 
 

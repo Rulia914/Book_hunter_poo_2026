@@ -30,5 +30,6 @@ abstract class Helpers
         return $string;
     }
 }
+
 //traduction des Helpers : 
 //Helpers::slugify(''); => classe abstract

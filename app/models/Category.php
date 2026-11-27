@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
+use Core\Model;
 
-class Category
+class Category extends Model
 {
 
-    public $id, $name, $created_at;
+    protected $id, $name, $created_at;
 }
